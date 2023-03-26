@@ -1,0 +1,27 @@
+﻿using System;
+using UnityEngine;
+using Zenject;
+
+namespace ZPRoot.Tasks._1
+{
+	public class InputForMove : MonoBehaviour
+	{
+		[Inject]
+		private IInputtable inputObject;
+
+		private void Move (Vector3 __inputPos)
+		{
+			var position = transform.localPosition;
+
+			transform.localPosition = position + __inputPos;
+		}
+
+		private void Update ()
+		{
+			if (inputObject != null)
+			{
+				Move(inputObject.InputForMove());
+			}
+		}
+	}
+}

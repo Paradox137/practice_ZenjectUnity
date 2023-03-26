@@ -4,7 +4,7 @@ using Zenject;
 
 namespace ZPRoot.Tasks._1
 {
-	public class InputForMove : MonoBehaviour
+	public class PlayerInput : MonoBehaviour
 	{
 		[Inject]
 		private IInputtable inputObject;
